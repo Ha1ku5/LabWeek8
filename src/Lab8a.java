@@ -154,8 +154,8 @@ public class Lab8a {
          int[] newArr = new int[array.length * 2];
          int k = 0;
          for(int j : array){
-             newArr[k+1] = j;
-             newArr[k] = j;
+             newArr[k+1] = j/2;
+             newArr[k] = j/2;
              k+=2;
          }
         return newArr;
