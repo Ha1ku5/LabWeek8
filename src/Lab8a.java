@@ -1,8 +1,10 @@
+import java.util.Arrays;
+
 /**
  * Write a description of class Lab8a here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Alexander Leatha
+ * @version 11/18/2022
  */
 public class Lab8a {
     /**
@@ -14,9 +16,9 @@ public class Lab8a {
      * method call in your main.
      */
     public static double median(double[] array) {
-        // your code here
-
-        return 0; //modify this later
+        if(array.length % 2 == 0) {
+            return (array[array.length / 2] + array[(array.length / 2) - 1]) / 2;
+        } else return array[array.length / 2];
     }
 
     /**
@@ -29,9 +31,13 @@ public class Lab8a {
      * @return
      */
     public static boolean isSorted(double[] array) {
-        // your code here
-
-        return false; //modify this later
+        double first = array[0];
+        for(double i : array){
+            if(first > i)
+                return false;
+            first = i;
+        }
+        return true;
     }
 
 
@@ -50,8 +56,31 @@ public class Lab8a {
      * common[] should contain: 3 5 6 9 0 0 0 0
      */
     public static void findCommon(int[] a1, int[]a2, int[] common) {
-        // this method requires some serious thought before implementing it
-        // your code here
+        int[] shortest;
+        int[] longest;
+        if(a1.length > a2.length) {
+            longest = a1;
+            shortest = a2;
+        } else {
+            longest = a2;
+            shortest = a1;
+        }
+
+
+        for(int i = 0; i < shortest.length; i++)
+            common[i] = 0;
+        if(a1.length < a2.length){
+            for(int i : a1){
+                if((Arrays.toString(a2)).contains(String.valueOf(i))){
+
+                }
+
+            }
+
+
+        }
+
+
 
     }
 
