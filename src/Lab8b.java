@@ -3,8 +3,8 @@ import java.util.Scanner;
 /**
  * Write a description of class Lab8b here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Alexander Leatha
+ * @version 11/18/2022
  */
 public class Lab8b {
     public static void main(String[] args) {

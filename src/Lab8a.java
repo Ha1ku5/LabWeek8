@@ -65,24 +65,25 @@ public class Lab8a {
             longest = a2;
             shortest = a1;
         }
-
-
-        for(int i = 0; i < shortest.length; i++)
-            common[i] = 0;
-        if(a1.length < a2.length){
-            for(int i : a1){
+        Arrays.fill(common, 0);
+        for(int i : shortest){
                 if((Arrays.toString(a2)).contains(String.valueOf(i))){
-
+                    for(int j = 0; 0 < common.length; j++){
+                        if(common[j] == i){
+                            break;
+                        }
+                        if(common[j] == 0){
+                            common[j] = i;
+                            break;
+                        }
+                    }
                 }
-
-            }
-
-
+        }
         }
 
 
 
-    }
+
 
 
     /**
@@ -95,9 +96,14 @@ public class Lab8a {
      * is called. Another call on rotateRight would leave the list as [19, 7, 3, 8].
      * Another call would leave the list as [8, 19, 7, 3] .
      */
-    public static void rotateRight(int[] array) {
-        // your code here
 
+    public static int[] rotateRight(int[] array) {
+        int[] rotated = new int[array.length];
+        rotated[0] = array[array.length - 1];
+        for(int i = 1; i < array.length; i++){
+            rotated[i] = array[i - 1];
+        }
+        return rotated;
     }
 
 
@@ -111,9 +117,11 @@ public class Lab8a {
      * would return 2 because there are 2 occurrences of the value 3 in the list.
      */
      public static int count(int[] array, int target) {
-         // your code here
-
-         return 0; //modify this later
+         int count = 0;
+         for(int i : array)
+             if(target == i)
+                 count++;
+         return count;
      }
 
 
@@ -143,9 +151,14 @@ public class Lab8a {
      */
 
      public static int[] stretch(int[] array) {
-         // your code here
-
-         return null; // modify this later
+         int[] newArr = new int[array.length * 2];
+         int k = 0;
+         for(int j : array){
+             newArr[k+1] = j;
+             newArr[k] = j;
+             k+=2;
+         }
+        return newArr;
      }
 
 
@@ -175,7 +188,11 @@ public class Lab8a {
 
          System.out.println("Exercise 3: ");
          findCommon(a1,a2,common);
+         System.out.println(Arrays.toString(rotateRight(a1)));
 
-         // Add your own tests here
+         //exercise 6
+         System.out.println( "Exercise 6: ");
+         System.out.println(Arrays.toString(a1));
+
      }
 }
