@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.*;
 
 /**
  * Write a description of class ShiftNumbers here.
@@ -19,16 +18,24 @@ public class ShiftNumbers {
         // Creates an array of int arrays
         int[][] digits = new int[n][n];
 
-        // TODO: Fill the 2D array with numbers
-        
+        //fills the array with sequential numbers that shift to the right every row
+        for (int row = 0; row < digits.length; row++)
+            for (int col = 0; col < digits[row].length; col++)
+                digits[row][col] = (row + col) % 10;
 
-        // TODO: Print the array
-        
-
-        // Prints the lower border
-        for(int j = 0; j < digits[0].length; ++j) {
-            System.out.print("+-");
+        //prints the array
+        line(digits.length);
+        for (int[] digit : digits) {
+            for (int j = 0; j < digits.length; j++)
+                System.out.print("| " + digit[j] + " ");
+            System.out.println("|");
+            line(digits.length);
         }
+    }
+
+    public static void line(int size){
+        for(int i = 0; i < size; i++)
+            System.out.print("+---");
         System.out.println("+");
     }
 }

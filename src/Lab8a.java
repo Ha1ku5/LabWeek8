@@ -81,11 +81,6 @@ public class Lab8a {
         }
         }
 
-
-
-
-
-
     /**
      * Exercise 4:
      * Write a method called rotateRight that takes an array of integers as
@@ -190,9 +185,14 @@ public class Lab8a {
          findCommon(a1,a2,common);
          System.out.println(Arrays.toString(rotateRight(a1)));
 
-         //exercise 6
-         System.out.println( "Exercise 6: ");
-         System.out.println(Arrays.toString(a1));
+         System.out.println("Exercise 4: ");
+         System.out.println(Arrays.toString(rotateRight(a1)));
+
+         System.out.println("Exercise 5: ");
+         System.out.println(count(a1, 5));
+
+         System.out.println("Exercise 6: ");
+         System.out.println(Arrays.toString(stretch(a1)));
 
      }
 }
